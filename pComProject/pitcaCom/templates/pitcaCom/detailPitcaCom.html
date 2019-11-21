@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html">
+    <title>컴퓨터 정보</title>
+</head>
+<body>
+    <p>컴퓨터 정보</p>
+
+    {% if com_info %}
+        name: {{ com_info.pc_name }}</br>
+        ip: {{ com_info.pc_ip }}</br>
+        cpu: {{ com_info.pc_cpu }}</br>
+        ram: {{ com_info.pc_ram }}</br>
+        storage: {{ com_info.pc_storage }}</br>
+        hdmi: {{ com_info.pc_hdmi }}</br>
+    {% else %}
+        <p>컴퓨터 정보를 확인할 수 없습니다.</p>
+    {% endif %}
+
+    <br>
+    <a href="{% url 'pitcaCom:comMod' com_info.pc_name %}">수정</a>
+    <a href="{% url 'pitcaCom:comDel' com_info.pc_name %}">삭제</a>
+    <a href="{% url 'pitcaCom:comAll' %}">컴퓨터 목록</a>
+    <a href="{% url 'pitcaCom:reg' %}">신규 컴퓨터 등록</a>
+</body>
+</html>
