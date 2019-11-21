@@ -23,4 +23,8 @@ urlpatterns = [
     path('reg/', views.regPitcaCom, name='reg'),
     path('regCon/', views.regConPitcaCom, name='regCon'),
     path('all/', views.reaPitcaComAll, name='comAll'),
+    path('<str:name>/det/', views.detPitcaCom, name='comDet'),
+    path('<str:name>/mod/', views.reaPitcaComOne, name='comMod'),
+    path('modCon/', views.modConPitcaCom, name='modCon'),
+    path('<str:name>/del/', views.delconPitcaCom, name='comDel'),
 ]
