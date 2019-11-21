@@ -12,9 +12,9 @@
         <ol>
             {% for c in com_list %}
             <li>
-                <a href="#none">{{c.pc_name}}</a>
-                <a href="#none">수정</a>
-                <a href="#none">삭제</a></br>
+                <a href="{% url 'pitcaCom:comDet' c.pc_name %}">{{c.pc_name}}</a>
+                <a href="{% url 'pitcaCom:comMod' c.pc_name %}">수정</a>
+                <a href="{% url 'pitcaCom:comDel' c.pc_name %}">삭제</a></br>
             </li>
             {% endfor %}
         </ol>
