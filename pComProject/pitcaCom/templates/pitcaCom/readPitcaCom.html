@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html">
+    <title>컴퓨터 목록</title>
+</head>
+<body>
+    <p>컴퓨터 목록</p>
+
+    {% if com_list %}
+        <ol>
+            {% for c in com_list %}
+            <li>
+                <a href="#none">{{c.pc_name}}</a>
+                <a href="#none">수정</a>
+                <a href="#none">삭제</a></br>
+            </li>
+            {% endfor %}
+        </ol>
+    {% else %}
+        <p>등록된 컴퓨터가 없습니다.</p>
+    {% endif %}
+
+    <br>
+    <a href="{% url 'pitcaCom:reg' %}">신규 컴퓨터 등록</a>
+</body>
+</html>

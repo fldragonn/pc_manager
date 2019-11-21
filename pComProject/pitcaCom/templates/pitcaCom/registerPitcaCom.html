@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html">
+    <title>컴퓨터 등록</title>
+</head>
+<body>
+    <p>컴퓨터 등록</p>
+    <form action="{% url 'pitcaCom:regCon' %}" method="post">
+        {% csrf_token %}
+        name :  <input type="text" name="name"></br>
+        ip :  <input type="text" name="ip"></br>
+        CPU :  <input type="text" name="cpu"></br>
+        RAM :  <input type="text" name="ram">GB</br>
+        Storage :  <input type="text" name="storage"></br>
+        HDMI :  <input type="text" name="hdmi"></br>
+        <input type="submit" name="Register">
+    </form>
+</body>
+</html>
