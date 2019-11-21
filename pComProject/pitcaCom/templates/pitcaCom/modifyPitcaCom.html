@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html">
+    <title>컴퓨터 수정</title>
+</head>
+<body>
+    <p>컴퓨터 수정</p>
+
+    {% if com_info %}
+        <form action="{% url 'pitcaCom:modCon' %}" method="post">
+            {% csrf_token %}
+            name : <b>{{com_info.pc_name}}</b></br>
+            <input type="hidden" name="name" value={{ com_info.pc_name }}></br>
+            ip :  <input type="text" name="ip" value={{ com_info.pc_ip }}></br>
+            CPU :  <input type="text" name="cpu" value={{ com_info.pc_cpu }}></br>
+            RAM :  <input type="text" name="ram" value={{ com_info.pc_ram }}>GB</br>
+            Storage :  <input type="text" name="storage" value={{ com_info.pc_storage }}></br>
+            HDMI :  <input type="text" name="hdmi" value={{ com_info.pc_hdmi }}></br>
+            <input type="submit" name="Register">
+        </form>
+    {% else %}
+        <p>수정할 컴퓨터가 존재하지 않습니다.</p>
+    {% endif %}
+</body>
+</html>
